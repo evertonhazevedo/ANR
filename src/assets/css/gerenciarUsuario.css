@@ -1,0 +1,118 @@
+#headerGerenciaUsuario {
+    color: lightseagreen;
+    font-weight: 400;
+    font-size: 40px;
+    text-align: center;
+    margin-top: 50px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+
+}
+
+#inputPesquisa {
+    margin-top: 60px;
+    margin-bottom: 50px;
+}
+
+.botoes {
+    margin: 5px;
+    color: white;
+}
+
+#btnSair {
+    color: white;
+}
+
+.btn-dark {
+    background-color: #e79900;
+    border: none;
+}
+
+.btn-dark:hover {
+    background-color: #c49a1f;
+}
+
+.headings {
+    color: lightseagreen;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    font-weight: bold;
+    margin-bottom: 70px;
+}
+
+thead,
+tbody {
+    text-align: center;
+}
+
+.table td {
+    vertical-align: middle;
+}
+
+#btnBuscarHierarquia,
+#btnGerenciarUsuario,
+#btnCadastrarUsuario,
+#btnDeslogar {
+    margin-left: 11px;
+}
+
+#btnEditarFuncionario {
+    margin-left: 35px;
+}
+
+#headingHierarquia {
+    margin-top: 25px;
+}
+
+#listheadingHierarquia {
+    height: 85px;
+    margin-bottom: 40px;
+}
+
+.funcoes {
+    text-align: center;
+}
+
+.cardFuncionarios {
+
+    border: 1px solid black;
+    background-color: lightgray;
+    height: 60px;
+    display: grid;
+    align-items: center;
+
+}
+
+.divFuncionarios {
+
+    padding-top: 20px;
+    padding-bottom: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+div#listEquipe {
+ 
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+#cardEquipe {
+    height: 50px;
+    align-content: center;
+    display: grid;
+}
+
+.linhaVertical  {
+    width: 1px;
+    height: 40px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+hr{
+    margin-top: 0px;
+    margin-bottom: 0px;
+}

@@ -1,0 +1,27 @@
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.btnFacebook{
+  border-color: #3b5998;
+}
+
+#headerLogin{
+  color: lightseagreen;
+  font-weight: 400;
+  font-size: 40px;
+  text-align: center;
+  margin-top: 50px;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif ;
+  font-style: italic;
+  font-weight: bold;
+
+}
+
+#btnEntrar{
+  color: white;
+}

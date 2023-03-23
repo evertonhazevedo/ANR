@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Achado Não É Roubado - Login</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link rel="stylesheet" href="./src/assets/css/index.css">
+</head>
+
+<body>
+  <section class="vh-100">
+
+    <h1 id="headerLogin">Achado Não é Roubado</h1>
+
+    <div class="container py-5 h-100">
+      <div class="row d-flex align-items-center justify-content-center h-100">
+        <div class="col-md-8 col-lg-7 col-xl-6">
+          <img
+            src="https://static7.depositphotos.com/1006899/703/i/600/depositphotos_7037333-stock-photo-the-person-looks-in-binocular.jpg"
+            class="img-fluid" alt="Phone image">
+        </div>
+        <div class="col-md-7 col-lg-5 col-xl-5 offset-xl-1">
+          <h5 class="fw-bold mb-2 text-uppercase">Login</h5>
+          <form>
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <select class="form-control inputFuncao" id="funcaoFuncionarioLogin">
+                <option value="1">Administrador(a)</option>
+                <option value="2">Diretor(a)</option>
+                <option value="3">Gerente</option>
+                <option value="4">Coordenador(a)</option>
+                <option value="5">Analista</option>
+                <option value="6">Desenvolvedor(a)</option>
+              </select>
+              <label class="form-label" for="form1Example13">Função</label>
+            </div>
+
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <select class="form-control inputDepartamento" id="departamentoFuncionarioLogin">
+                <option value="1">Adminstração</option>
+                <option value="2">Financeiro</option>
+                <option value="3">Recursos Humanos</option>
+                <option value="4">Infraestrutura</option>
+                <option value="5">Projetos</option>
+                <option value="6">Sustentação</option>
+              </select>
+              <label class="form-label" for="form1Example23">Departamento</label>
+            </div>
+
+            <!-- Submit button -->
+            <a type="submit" class="btn btn-info  btn-block" style="background-color: lightseagreen;"
+              id="btnEntrar">Entrar</a>
+
+            <div class="divider d-flex align-items-center my-4">
+              <p class="text-center fw-bold mx-3 mb-0 text-muted">OU</p>
+            </div>
+
+            <a class="btn btn-primary btn-block btnFacebook" style="background-color: #3b5998" href="#!" role="button">
+              <i class="fab fa-facebook-f me-2"></i>Continue com o Facebook
+            </a>
+            <a class="btn btn-danger btn-block" style="background-color: #bb2d3b" href="#!" role="button">
+              <i class="fab fa-twitter me-2"></i>Continue com o Gmail</a>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Optional JavaScript -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Import Scripts -->
+  <script type="text/JavaScript" src="src/assets/js/validarLogin.js"></script>
+</body>
+
+</html>

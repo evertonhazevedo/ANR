@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Gerenciar Usuários</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="../assets/css/gerenciarUsuario.css">
+</head>
+
+<body>
+
+    <!--Titulo-->
+    <h1 id="headerGerenciaUsuario">
+        Gerenciar Usuários
+    </h1>
+
+    <main>
+
+        <!-- Barra de Pesquisa -->
+        <div id="pesquisar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <form class="d-flex form-pesquisa">
+                            <input id="inputPesquisa" class="form-control mr-sm-2 inputPesquisa" type="search"
+                                placeholder="Busque por um funcionário" aria-label="Search">
+                        </form>
+                    </div>
+                    <div class="col-md-4">
+
+                        <!-- Botões -->
+                        <div class=" d-flex" style="margin-top: 55px;">
+                            <button type="button" class="btn btn-success botoes" data-toggle="modal"
+                                data-target="#formCadastrarFuncionario" id="btnCadFuncionario">Cadastrar
+                                funcionário
+                                <img id="btnCadastrarUsuario"
+                                    src="https://cdn-icons-png.flaticon.com/24/3631/3631618.png"></button>
+                            <a type="button" class="btn btn-danger botoes" id="btnSair">Sair
+                                <img id="btnDeslogar" src="https://cdn-icons-png.flaticon.com/24/3596/3596141.png">
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tabela -->
+                    <table id="tableGerenciarUsuario" class=" table tableGerenciarUsuario">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Cadastro de Funcionários-->
+        <div class="modal fade" id="formCadastrarFuncionario" tabindex="-1" role="dialog"
+            aria-labelledby="formCadastrarFuncionario" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+                        <!-- Formulário de Cadastro de Funcionário -->
+                        <form id="formCadastrarFuncionario" class="needs-validation" novalidate>
+                            <div class="form-group">
+                                <div class="modal-footer" style="border: none;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+                                <h3 class="headings">Cadastrar Funcionário</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="inputNomeFuncionario" class="headerInput">Nome:</label>
+                                        <input type="text" class="form-control inputsDadosFuncionario"
+                                            id="cadNomeFuncionario" placeholder="Funcionario teste" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputSobrenomeFuncionario" class="headerInput">Sobrenome:</label>
+                                        <input type="text" class="form-control inputsDadosFuncionario"
+                                            id="cadSobrenomeFuncionario" placeholder=" da Silva" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputCpfFuncionario" class="headerInput">CPF:</label>
+                                        <input oninput="mascaraCpf(this)" type="text"
+                                            class="form-control inputsDadosFuncionario" id="cadCpfFuncionario"
+                                            placeholder="000.000.000-00" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputFuncaoFuncionario" class="headerInput">Função</label>
+                                        <select class="form-control inputFuncao" id="cadFuncaoFuncionario">
+                                            <option value="1">Administrador(a)</option>
+                                            <option value="2">Diretor(a)</option>
+                                            <option value="3">Gerente</option>
+                                            <option value="4">Coordenador(a)</option>
+                                            <option value="5">Analista</option>
+                                            <option value="6">Desenvolvedor(a)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputDepartamentoFuncionario"
+                                            class="headerInput">Departamento:</label>
+                                        <select class="form-control inputDepartamento" id="cadDepartamentoFuncionario">
+                                            <option value="1">Adminstração</option>
+                                            <option value="2">Financeiro</option>
+                                            <option value="3">Recursos Humanos</option>
+                                            <option value="4">Infraestrutura</option>
+                                            <option value="5">Projetos</option>
+                                            <option value="6">Sustentação</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="campo-erro alert alert-danger d-none">
+                                Preencha o campo <span id="campo-erro"></span>!
+                            </div>
+                            <div>
+                                <button type="button" id="btnCadastrarFuncionario"
+                                    class="btnCadastrarFuncionario form-control inputsPerfil btn btn-success">Cadastrar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Gerenciamento de Funcionários-->
+        <div class="modal fade" id="formGerenciarFuncionario" tabindex="-1" role="dialog"
+            aria-labelledby="formGerenciarFuncionario" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <!-- Formulário de Gerenciamento de Funcionário -->
+                        <form id="formGerenciarFuncionario" class="needs-validation" novalidate>
+                            <div class="form-group">
+                                <div class="modal-footer" style="border: none;">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                            aria-hidden="true">&times;</span></button>
+                                </div>
+                                <h3 class="headings">Gerenciar Funcionário</h3>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="inputNomeFuncionario" class="headerInput">Nome:</label>
+                                        <input type="text" class="form-control inputsDadosFuncionario"
+                                            id="nomeFuncionario" placeholder="Funcionario teste" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputSobrenomeFuncionario" class="headerInput">Sobrenome:</label>
+                                        <input type="text" class="form-control inputsDadosFuncionario"
+                                            id="sobrenomeFuncionario" placeholder=" da Silva" required>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputCpfFuncionario" class="headerInput">CPF:</label>
+                                        <input oninput="mascaraCpf(this)" type="text"
+                                            class="form-control inputsDadosFuncionario" id="cpfFuncionario"
+                                            placeholder="000.000.000-00" required disabled>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputFuncaoFuncionario" class="headerInput">Função</label>
+                                        <select class="form-control inputFuncao" id="funcaoFuncionario">
+                                            <option value="1">Administrador(a)</option>
+                                            <option value="2">Diretor(a)</option>
+                                            <option value="3">Gerente</option>
+                                            <option value="4">Coordenador(a)</option>
+                                            <option value="5">Analista</option>
+                                            <option value="6">Desenvolvedor(a)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col">
+                                    <div class="form-group">
+                                        <label for="inputDepartamentoFuncionario"
+                                            class="headerInput">Departamento:</label>
+                                        <select class="form-control inputDepartamento" id="departamentoFuncionario">
+                                            <option value="1">Adminstração</option>
+                                            <option value="2">Financeiro</option>
+                                            <option value="3">Recursos Humanos</option>
+                                            <option value="4">Infraestrutura</option>
+                                            <option value="5">Projetos</option>
+                                            <option value="6">Sustentação</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="campo-erro alert alert-danger d-none">
+                                Preencha o campo <span id="campo-erro"></span>!
+                            </div>
+                            <div class="align-items-center">
+                                <button type="button" id="btnEditarFuncionario"
+                                    class=" col-sm-5  form-control inputsPerfil btn btn-success">Salvar</button>
+                                <button type="button" id="btnExcluirFuncionario"
+                                    class=" col-sm-5  form-control inputsPerfil btn btn-danger">Excluir</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal de Busca de Hierarquia-->
+        <div class="modal fade" id="formBuscarHierarquia" tabindex="-1" role="dialog"
+            aria-labelledby="formBuscarHierarquia" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body">
+
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                                aria-hidden="true">&times;</span></button>
+
+                        <div id="listheadingHierarquia" class="row align-items-center justify-content-center"></div>
+
+                        <div id="listDiretor" class="row align-items-center justify-content-center"></div>
+
+                        <div id="listGerente" class="row align-items-center justify-content-center"></div>
+
+                        <div id="listCoordenador" class="row align-items-center justify-content-center"></div>
+
+                        <div id="linhaHorizontal"></div>
+
+                        <div id="listEquipe" class="row align-items-center justify-content-center"></div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="list" class="row row-cols-1 row-cols-md-4 g-4"></div>
+    </main>
+
+    <!--JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <!-- Import Scripts -->
+    <script type="text/JavaScript" src="/src/assets/js/editarUsuario.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/cadastrarUsuario.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/listarUsuarios.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/excluirUsuario.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/buscarHierarquia.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/mascaras.js"></script>
+    <script type="text/JavaScript" src="/src/assets/js/deslogarUsuario.js"></script>
+</body>
+
+</html>
