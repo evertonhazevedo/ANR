@@ -1,0 +1,19 @@
+{
+  "name": "tdl",
+  "version": "1.0.0",
+  "description": "Projeto II - 4° Período - Programação Web",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/evertonhazevedo/TDL.git"
+  },
+  "author": "Everton H. Azevedo",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/evertonhazevedo/TDL/issues"
+  },
+  "homepage": "https://github.com/evertonhazevedo/TDL#readme"
+}
